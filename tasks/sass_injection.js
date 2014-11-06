@@ -9,7 +9,7 @@
 'use strict';
 
 module.exports = function(grunt) {
-    grunt.registerMultiTask('sass_compile_imports', 'Create an import file by scanning a directory for SASS files', function() {
+    grunt.registerMultiTask('sass_injection', 'Create an import file by scanning a directory for SASS files', function() {
       var importFiles = [
       ];
       var importTopFiles = [

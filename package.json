@@ -1,10 +1,11 @@
 {
   "name": "grunt-sass-injection",
   "description": "Inject scss files by importing directory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ArcaneMainFrame/grunt-sass-injection",
   "author": {
     "name": "ArcaneMainFrame",
+    "email": "tbrickhouse@unum.com"
   },
   "engines": {
     "node": ">= 0.8.0"

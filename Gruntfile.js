@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    sass_compile_imports: {
+    sass_injection: {
       default_options: {
         target: 'test/_partials.scss',
         src: ['test/fixtures/testing', 'test/fixtures/123']
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'sass_compile_imports', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'sass_injection', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint']);

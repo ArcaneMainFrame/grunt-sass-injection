@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   'C:\\Users\\avx12\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'adduser' ]
+2 info using npm@2.0.2
+3 info using node@v0.10.32
+4 verbose adduser before first PUT { name: 'arcanemainframe',
+4 verbose adduser   password: 'XXXXX',
+4 verbose adduser   email: 'tbrickouse@unum.com',
+4 verbose adduser   _id: 'org.couchdb.user:arcanemainframe',
+4 verbose adduser   type: 'user',
+4 verbose adduser   roles: [],
+4 verbose adduser   date: '2014-11-06T14:46:00.909Z' }
+5 verbose request on initialization, where is /-/user/org.couchdb.user:arcanemainframe
+6 verbose request after pass 1, where is /-/user/org.couchdb.user:arcanemainframe
+7 verbose request url raw /-/user/org.couchdb.user:arcanemainframe
+8 verbose request resolving registry [ 'https://registry.npmjs.org/',
+8 verbose request   './-/user/org.couchdb.user:arcanemainframe' ]
+9 verbose request after pass 2, where is https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe
+10 verbose request new user, so can't send auth
+11 info attempt registry request try #1 at 09:46:00
+12 verbose request id 05c51d7cefd1989b
+13 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe
+14 http 409 https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe
+15 verbose headers { date: 'Thu, 06 Nov 2014 14:46:01 GMT',
+15 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+15 verbose headers   'content-type': 'application/json',
+15 verbose headers   'cache-control': 'max-age=60',
+15 verbose headers   'content-length': '58',
+15 verbose headers   'accept-ranges': 'bytes',
+15 verbose headers   via: '1.1 varnish',
+15 verbose headers   'x-served-by': 'cache-atl6229-ATL',
+15 verbose headers   'x-cache': 'MISS',
+15 verbose headers   'x-cache-hits': '0',
+15 verbose headers   'x-timer': 'S1415285161.126226,VS0,VE78',
+15 verbose headers   'keep-alive': 'timeout=10, max=50',
+15 verbose headers   connection: 'Keep-Alive' }
+16 verbose adduser update existing user
+17 verbose request on initialization, where is /-/user/org.couchdb.user:arcanemainframe
+18 verbose request after pass 1, where is /-/user/org.couchdb.user:arcanemainframe?write=true
+19 verbose request url raw /-/user/org.couchdb.user:arcanemainframe?write=true
+20 verbose request resolving registry [ 'https://registry.npmjs.org/',
+20 verbose request   './-/user/org.couchdb.user:arcanemainframe?write=true' ]
+21 verbose request after pass 2, where is https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe?write=true
+22 verbose request new user, so can't send auth
+23 info attempt registry request try #1 at 09:46:01
+24 http request GET https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe?write=true
+25 http 200 https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe?write=true
+26 verbose adduser userobj { name: 'arcanemainframe',
+26 verbose adduser   password: 'XXXXX',
+26 verbose adduser   email: 'tbrickouse@unum.com',
+26 verbose adduser   _id: 'org.couchdb.user:arcanemainframe',
+26 verbose adduser   type: 'user',
+26 verbose adduser   roles: [],
+26 verbose adduser   date: '2014-11-06T14:46:00.909Z' }
+27 verbose request on initialization, where is /-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4
+28 verbose request after pass 1, where is /-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4
+29 verbose request url raw /-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4
+30 verbose request resolving registry [ 'https://registry.npmjs.org/',
+30 verbose request   './-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4' ]
+31 verbose request after pass 2, where is https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4
+32 verbose request sending authorization for write operation
+33 info attempt registry request try #1 at 09:46:01
+34 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4
+35 http 401 https://registry.npmjs.org/-/user/org.couchdb.user:arcanemainframe/-rev/1-667824fa29a5ab9dd71a96268fa6dfa4
+36 verbose headers { date: 'Thu, 06 Nov 2014 14:46:01 GMT',
+36 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+36 verbose headers   'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=60',
+36 verbose headers   'content-length': '67',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   'x-served-by': 'cache-atl6224-ATL',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1415285161.443727,VS0,VE326',
+36 verbose headers   'keep-alive': 'timeout=10, max=50',
+36 verbose headers   connection: 'Keep-Alive' }
+37 verbose stack Error: No credentials to set.
+37 verbose stack     at Conf.setCredentialsByURI (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\npmconf\lib\set-credentials-by-uri.js:40:11)
+37 verbose stack     at RegClient.<anonymous> (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\adduser.js:112:17)
+37 verbose stack     at f (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\once\once.js:16:25)
+37 verbose stack     at C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:125:10
+37 verbose stack     at f (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\once\once.js:16:25)
+37 verbose stack     at RegClient.<anonymous> (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:276:12)
+37 verbose stack     at Request._callback (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:197:65)
+37 verbose stack     at Request.self.callback (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:237:22)
+37 verbose stack     at Request.emit (events.js:98:17)
+37 verbose stack     at Request.<anonymous> (C:\Users\avx12\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:1146:14)
+38 verbose cwd C:\Users\avx12\Documents\GitHub\grunt-sass-injection
+39 error Windows_NT 6.1.7601
+40 error argv "node" "C:\\Users\\avx12\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "adduser"
+41 error node v0.10.32
+42 error npm  v2.0.2
+43 error No credentials to set.
+44 error If you need help, you may report this error at:
+44 error     <http://github.com/npm/npm/issues>
+45 verbose exit [ 1, true ]
