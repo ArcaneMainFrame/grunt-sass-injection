@@ -36,17 +36,17 @@ grunt.initConfig({
 ```
 
 The following comments need to be placed in your site.scss/app.scss for the plugin to work properly. 
-
+```
 // import
 
 // endimport
-
+```
 If you have some scss files that need to go to the top of the file you can optionally add the following to your scss file: 
-
+```
 // topImport
 
 // endtopImport
-
+```
 This will take any scss partial file with a double underscore in the name and place it at between the two comment tags. Otherwise the files all go into the regular import call which should be further down in your main scss file. 
 
 
