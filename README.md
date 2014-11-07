@@ -1,6 +1,6 @@
-# grunt-sass-compile-imports
+# grunt-sass-injection
 
-> Create an import file by scanning a directory for SASS files
+> Compile an import file based on scss files in a directory.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -8,23 +8,23 @@ This plugin requires Grunt `~0.4.0`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-sass-compile-imports --save-dev
+npm install grunt-sass-injection --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-sass-compile-imports');
+grunt.loadNpmTasks('grunt-sass-injection');
 ```
 
-## The "sass_compile_imports" task
+## The "sass_injection" task
 
 ### Overview
 In your project's Gruntfile, add a section named `sass_compile_imports` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  sass_compile_imports: {
+  sass_injection: {
     options: {
       // Task-specific options go here.
     },
@@ -34,6 +34,21 @@ grunt.initConfig({
   },
 });
 ```
+
+The following comments need to be placed in your site.scss/app.scss for the plugin to work properly. 
+
+// import
+
+// endimport
+
+If you have some scss files that need to go to the top of the file you can optionally add the following to your scss file: 
+
+// topImport
+
+// endtopImport
+
+This will take any scss partial file with a double underscore in the name and place it at between the two comment tags. Otherwise the files all go into the regular import call which should be further down in your main scss file. 
+
 
 ### Options
 
@@ -49,13 +64,4 @@ Default value: `false`
 
 A flag used to specify if the task should output information about the files it is importing
 
-### Usage Examples
 
-Coming soon
-```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
