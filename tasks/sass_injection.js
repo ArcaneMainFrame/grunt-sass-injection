@@ -99,15 +99,12 @@ module.exports = function(grunt) {
 
       if (begin || topBegin) {
         grunt.log.writeln('Imported: ' + files.length + ' files');
+        if (!options.quiet) {
+            grunt.log.writeln('\nImport file created');
+        }
       }
       else {
-        grunt.log.writeIn('Please place import tags within your scss file');
-      }
-      
-      
-
-      if (!options.quiet) {
-          grunt.log.writeln('\nImport file created');
+        grunt.log.error('No import tags were found');
       }
     });
 
