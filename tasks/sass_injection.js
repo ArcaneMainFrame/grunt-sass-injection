@@ -70,20 +70,41 @@ module.exports = function(grunt) {
       
       var begin = readFile.match('// import');
       var topBegin = readFile.match('// topImport');
+
       if (begin) {
         
         var end = readFile.match('// endimport').index;
-        var topEnd = readFile.match('// endtopImport').index;
         var startReplace = begin.index + begin[0].length;
-        var startTopReplace = topBegin.index + topBegin[0].length;
         var content = readFile.substring(0, startReplace) + '\n' + importFiles + '\n' + readFile.substring(end, readFile.length); 
-        var contentAdd = content.substring(0, startTopReplace) + '\n' + importTopFiles + '\n' + content.substring(topEnd, content.length);
+
+        if (topBegin) {
+          var topEnd = readFile.match('// endtopImport').index;
+          var startTopReplace = topBegin.index + topBegin[0].length;
+          var contentAdd = content.substring(0, startTopReplace) + '\n' + importTopFiles + '\n' + content.substring(topEnd, content.length);
+          grunt.file.write(this.data.target, contentAdd);
+        }  
+        else {
+            grunt.file.write(this.data.target, content);
+        }
       }
 
-      grunt.log.writeln('Imported: ' + files.length + ' files');
+      else {
+        if (topBegin) {
+          var topEnd = readFile.match('// endtopImport').index;
+          var startTopReplace = topBegin.index + topBegin[0].length;
+          var contentAdd = readFile.substring(0, startTopReplace) + '\n' + importTopFiles + '\n' + readFile.substring(topEnd, readFile.length);
+          grunt.file.write(this.data.target, contentAdd)
+        }
+      }
+
+      if (begin || topBegin) {
+        grunt.log.writeln('Imported: ' + files.length + ' files');
+      }
+      else {
+        grunt.log.writeIn('Please place import tags within your scss file');
+      }
       
-      // Create the new file
-      grunt.file.write(this.data.target, contentAdd)
+      
 
       if (!options.quiet) {
           grunt.log.writeln('\nImport file created');
